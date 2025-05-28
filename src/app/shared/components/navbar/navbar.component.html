@@ -1,0 +1,66 @@
+<nav class="py-5 shadow">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="flex items-center space-x-5">
+      <a routerLink="" class="font-bold flex! gap-2"
+        ><img
+          src="/icons/icon-72x72.png"
+          width="25"
+          height="25"
+          aria-label="brand"
+        /><span>NewsToday</span></a
+      >
+      <div class="hidden lg:flex items-center space-x-5">
+        <a routerLink="news-category/health">Health</a>
+        <a routerLink="news-category/business">Business</a>
+        <a routerLink="news-category/tech">Tech</a>
+        <a routerLink="news-category/food">Food</a>
+        <a routerLink="news-category/science">Science</a>
+        <a routerLink="news-category/politics">Politics</a>
+      </div>
+    </div>
+    <div class="flex items-center space-x-2">
+      <div class="relative input-search rounded px-2 py-1">
+        <i
+          class="fa-solid fa-magnifying-glass absolute left-[7px] top-1/2 -translate-y-1/2"
+        ></i>
+        <input [(ngModel)]="search" type="search" class="w-[135px] sm:w-auto" placeholder="Search" />
+      </div>
+      <button (click)="toggleDarkMode()">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+      <button (click)="toggleSideBar()" class="block lg:hidden">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div
+  #navSlider
+  class="fixed top-0 left-0 h-screen w-screen side-bar -z-1 opacity-0"
+>
+  <button
+    class="absolute top-0 right-0 w-screen h-screen opacity-80 z-1 bg-black! border-none outline-none hover:bg-black!"
+    (click)="toggleSideBar()"
+  ></button>
+  <div
+    class="absolute top-0 right-0 w-[270px] h-screen bg-white dark:bg-stone-900 p-8 flex flex-col side-bar-content z-2"
+  >
+    <a routerLink="" class="font-bold flex! gap-2 justify-center text-lg"
+      ><img
+        src="/icons/icon-72x72.png"
+        width="30"
+        height="30"
+        aria-label="brand"
+      /><span>NewsToday</span></a
+    >
+    <div class="flex flex-col items-center mt-5 space-y-3">
+      <a routerLink="news-category/health" class="w-full text-center">Health</a>
+      <a routerLink="news-category/business" class="w-full text-center">Business</a>
+      <a routerLink="news-category/tech" class="w-full text-center">Tech</a>
+      <a routerLink="news-category/food" class="w-full text-center">Food</a>
+      <a routerLink="news-category/science" class="w-full text-center">Science</a>
+      <a routerLink="news-category/politics" class="w-full text-center">Politics</a>
+    </div>
+  </div>
+</div>

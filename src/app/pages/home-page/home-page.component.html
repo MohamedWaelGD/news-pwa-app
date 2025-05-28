@@ -1,0 +1,8 @@
+<div class="flex flex-col gap-5">
+    <app-hero-section [news]="heroNews()" [loading]="loading()"></app-hero-section>
+    <app-trending-topics [news]="trendingNews()" [loading]="loading()"></app-trending-topics>
+    <app-extra-topics [news]="extraNews()" [loading]="loading()"></app-extra-topics>
+    <div class="flex justify-center">
+        <a class="btn text-lg py-3 px-4" routerLink="/news">Load More</a>
+    </div>
+</div>

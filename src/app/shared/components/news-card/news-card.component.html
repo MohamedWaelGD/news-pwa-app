@@ -1,0 +1,9 @@
+<a class="flex flex-col gap-2" [href]="news().link" target="_blank">
+    <img [src]="news().image_url ?? placeholderNewsNoPreview" class="object-cover rounded-lg h-[200px]"
+    #img
+    (error)="img.src = placeholderNewsNoPreview" />
+    <h3 class="truncate font-bold text-xl">{{news().title}}</h3>
+    @if (news().description) {
+        <p class="truncate">{{news().description}}</p>
+    }
+</a>

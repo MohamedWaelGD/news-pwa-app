@@ -1,0 +1,16 @@
+<div>
+    <h2 class="text-3xl font-bold mb-3">More News</h2>
+    @if (loading()) {
+         <div class="h-[264px] flex justify-center items-center">
+            <app-loading-spinner/>
+         </div>
+    } @else {
+        <div class="flex flex-col gap-5">
+            @for (news of news(); track news.article_id) {
+                <div class="w-full">
+                    <app-news-block [news]="news"></app-news-block>
+                </div>
+            }
+        </div>
+    }
+</div>

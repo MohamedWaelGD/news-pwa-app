@@ -1,0 +1,1 @@
+export const placeholderNewsNoPreview = 'https://placehold.co/600x400?text=No+Preview&font=roboto';

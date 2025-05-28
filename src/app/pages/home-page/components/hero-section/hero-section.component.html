@@ -1,0 +1,37 @@
+<!-- Slider main container -->
+@if (loading()) {
+<div class="text-center h-[50vh] flex items-center justify-center">
+  <app-loading-spinner />
+</div>
+} @else { @if (news() && news().length) {
+
+<div class="swiper h-[50vh] text-white rounded">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    @for (news of news(); track news.article_id) {
+    <a class="swiper-slide relative" [href]="news.link" target="_blank">
+      <img
+        [src]="news.image_url ?? placeholderNewsNoPreview"
+        #img
+        (error)="img.src = placeholderNewsNoPreview"
+        class="absolute top-0 left-0 w-full h-full object-cover"
+      />
+      <div
+        class="absolute bottom-0 left-0 w-full bg-linear-to-b from-black/0 to-black/80 p-5"
+      >
+        <p class="text-3xl">{{ news.title }}</p>
+      </div>
+    </a>
+    }
+  </div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev text-white! ml-5"></div>
+  <div class="swiper-button-next text-white! mr-5"></div>
+</div>
+} @else {
+<div class="text-center h-[50vh] flex items-center justify-center">
+  There are no News here, Try again later
+</div>
+} }
