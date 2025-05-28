@@ -23,6 +23,14 @@ export class NavbarComponent implements OnInit {
   protected search$ = new Subject<string>();
   protected searchDebounced = this.search$.pipe(debounceTime(1000));
   protected isSideBarOpen = signal(false);
+  protected categoriesToSearch = [
+    'Business',
+    'Education',
+    'Health',
+    'Entertainment',
+    'Science',
+    'Politics'
+  ]
 
   constructor() {
     effect(() => {

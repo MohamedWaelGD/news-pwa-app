@@ -10,12 +10,9 @@
         /><span>NewsToday</span></a
       >
       <div class="hidden lg:flex items-center space-x-5">
-        <a routerLink="news-category/health">Health</a>
-        <a routerLink="news-category/business">Business</a>
-        <a routerLink="news-category/tech">Tech</a>
-        <a routerLink="news-category/food">Food</a>
-        <a routerLink="news-category/science">Science</a>
-        <a routerLink="news-category/politics">Politics</a>
+      @for (category of categoriesToSearch; track category) {
+        <a routerLink="news-category/{{category}}">{{category}}</a>
+      }
       </div>
     </div>
     <div class="flex items-center space-x-2">
@@ -55,12 +52,9 @@
       /><span>NewsToday</span></a
     >
     <div class="flex flex-col items-center mt-5 space-y-3">
-      <a routerLink="news-category/health" class="w-full text-center">Health</a>
-      <a routerLink="news-category/business" class="w-full text-center">Business</a>
-      <a routerLink="news-category/tech" class="w-full text-center">Tech</a>
-      <a routerLink="news-category/food" class="w-full text-center">Food</a>
-      <a routerLink="news-category/science" class="w-full text-center">Science</a>
-      <a routerLink="news-category/politics" class="w-full text-center">Politics</a>
+      @for (category of categoriesToSearch; track category) {
+        <a routerLink="news-category/{{category}}" class="w-full text-center">{{category}}</a>
+      }
     </div>
   </div>
 </div>
