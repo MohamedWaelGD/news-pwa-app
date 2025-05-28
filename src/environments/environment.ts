@@ -1,5 +1,5 @@
 export const environment = {
-    API_KEY: "pub_17cb12a3f3f74f0e8e940da4536cc829",
+    API_KEY: "pub_98598bca91f2481d9f52a2c4716e19dc",
     API_URL: "https://newsdata.io/api/1",
 };
 // 
