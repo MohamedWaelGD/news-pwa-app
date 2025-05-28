@@ -5,12 +5,18 @@
             <app-loading-spinner/>
          </div>
     } @else {
-        <div class="flex flex-col gap-5">
-            @for (news of news(); track news.article_id) {
-                <div class="w-full">
-                    <app-news-block [news]="news"></app-news-block>
-                </div>
-            }
-        </div>
+        @if (news() && news().length) {
+            <div class="flex flex-col gap-5">
+                @for (news of news(); track news.article_id) {
+                    <div class="w-full">
+                        <app-news-block [news]="news"></app-news-block>
+                    </div>
+                }
+            </div>
+        } @else {
+            <div>
+                There are no results, Please try again later.
+            </div>
+        }
     }
 </div>
